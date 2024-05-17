@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "3ded5a7a-dd77-4a5c-8064-c54155657818",
+		"name": "OneToMany",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33957944"
+	},
+	"item": [
+		{
+			"name": "Add customers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n    \"customerId\":12,\r\n    \"name\":\"arun\",\r\n    \"location\":\"india\",\r\n    \"orders\":[\r\n        {\r\n            \"ordersId\":2334891,\r\n            \"product\":\"Phone\"\r\n        },\r\n        {\r\n            \"ordersId\":224342,\r\n            \"product\":\"fan\"\r\n        }\r\n        \r\n    ]\r\n    }\r\n\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/addCustomer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addCustomer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add orders",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n        {\r\n            \"ordersId\":233489,\r\n            \"product\":\"Phone\",\r\n            \"customer\":{\r\n                \"customerId\":22,\r\n                \"name\":\"arun\",\r\n                \"location\":\"india\"\r\n            }\r\n        },\r\n        {\r\n            \"ordersId\":22434,\r\n            \"product\":\"fan\",\r\n            \"customer\":{\r\n                \"customerId\":22,\r\n                \"name\":\"arun\",\r\n                \"location\":\"india\"\r\n            }\r\n        }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/addOrders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addOrders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
